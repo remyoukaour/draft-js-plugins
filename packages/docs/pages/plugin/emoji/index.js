@@ -318,6 +318,18 @@ export default class App extends Component {
               </div>
               <div className={styles.subParam}>
                 <span className={styles.subParamName}>
+                  emojiSelectAttribution:
+                </span>
+                CSS class for the attribution in the emoji select popup.
+              </div>
+              <div className={styles.subParam}>
+                <span className={styles.subParamName}>
+                  emojiSelectAttributionLink:
+                </span>
+                CSS class for an attribution link in the emoji select popup.
+              </div>
+              <div className={styles.subParam}>
+                <span className={styles.subParamName}>
                   emojiSelectPopoverScrollbarOuter:
                 </span>
                 CSS class for the outer scrollbar box in the emoji select popup.
@@ -386,6 +398,14 @@ export default class App extends Component {
               If set to <InlineCode code={'true'} />, uses host system art for
               emojis instead of EmojiOne art. Default value is{' '}
               <InlineCode code={'false'} />.
+            </span>
+          </div>
+          <div className={styles.paramBig}>
+            <span className={styles.paramName}>showAttribution</span>
+            <span>
+              If set to <InlineCode code={'true'} />, show an attribution notice
+              for the EmojiOne art as required by its CC-BY-4.0 license. Default
+              value is <InlineCode code={'false'} />.
             </span>
           </div>
           <div className={styles.paramBig}>

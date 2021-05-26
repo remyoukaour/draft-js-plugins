@@ -84,6 +84,7 @@ export interface EmojiPluginConfig {
   emojiImage?: ComponentType<EmojiImageProps>;
   emojiInlineText?: ComponentType<EmojiInlineTextProps>;
   disableInlineEmojis?: boolean;
+  showAttribution?: boolean;
 }
 
 interface GetClientRectFn {
@@ -171,6 +172,7 @@ export default (config: EmojiPluginConfig = {}): EmojiPlugin => {
     toneSelectOpenDelay,
     useNativeArt,
     disableInlineEmojis,
+    showAttribution,
     emojiImage = useNativeArt ? NativeEmojiImage : JoyPixelEmojiImage,
     emojiInlineText = useNativeArt
       ? NativeEmojiInlineText
@@ -197,6 +199,7 @@ export default (config: EmojiPluginConfig = {}): EmojiPlugin => {
     selectButtonContent,
     toneSelectOpenDelay,
     emojiImage,
+    showAttribution,
   };
   const DecoratedEmojiSuggestions = (
     props: EmojiSuggestionsPubParams

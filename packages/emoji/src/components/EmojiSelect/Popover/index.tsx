@@ -20,6 +20,7 @@ interface PopoverProps {
   emojis: EmojiStrategy;
   toneSelectOpenDelay: number;
   isOpen?: boolean;
+  showAttribution?: boolean;
   emojiImage: ComponentType<EmojiImageProps>;
   onEmojiSelect(): void;
 }
@@ -32,6 +33,7 @@ export default class Popover extends Component<PopoverProps> {
     emojis: PropTypes.object.isRequired,
     toneSelectOpenDelay: PropTypes.number.isRequired,
     isOpen: PropTypes.bool,
+    showAttribution: PropTypes.bool,
   };
 
   activeEmoji: Entry | null = null;
@@ -177,6 +179,7 @@ export default class Popover extends Component<PopoverProps> {
       emojis,
       isOpen = false,
       emojiImage,
+      showAttribution,
     } = this.props;
 
     const className = isOpen
@@ -217,6 +220,25 @@ export default class Popover extends Component<PopoverProps> {
               activeGroup={activeGroup}
               onGroupSelect={this.onGroupSelect}
             />
+            {showAttribution && (
+              <div className={theme.emojiSelectPopoverAttribution}>
+                EmojiOne art by{' '}
+                <a
+                  className={theme.emojiSelectPopoverAttributionLink}
+                  href="https://www.joypixels.com/"
+                >
+                  JoyPixels
+                </a>{' '}
+                (
+                <a
+                  className={theme.emojiSelectPopoverAttributionLink}
+                  href="https://creativecommons.org/licenses/by/4.0/"
+                >
+                  CC-BY-4.0
+                </a>
+                )
+              </div>
+            )}
             {this.renderToneSelect()}
           </>
         )}

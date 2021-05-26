@@ -38,6 +38,9 @@ export interface EmojiPluginTheme {
   emojiSelectPopoverNavEntry?: string;
   emojiSelectPopoverNavEntryActive?: string;
 
+  emojiSelectPopoverAttribution?: string;
+  emojiSelectPopoverAttributionLink?: string;
+
   emojiSelectPopoverScrollbar?: string;
   emojiSelectPopoverScrollbarOuter?: string;
   emojiSelectPopoverScrollbarThumb?: string;
@@ -334,6 +337,31 @@ export const defaultTheme: EmojiPluginTheme = {
   emojiSelectPopoverNavEntryActive: css`
     ${selectPopoverNavEntryShared}
     color: #42a5f5;
+  `,
+
+  emojiSelectPopoverAttribution: css`
+    margin: 0 0 0.375em;
+    padding-left: 1.25em;
+    font-size: 0.8em;
+    color: #9e9e9e;
+  `,
+  emojiSelectPopoverAttributionLink: css`
+    &,
+    &:visited {
+      color: #5e93c5;
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:focus {
+      color: #7eadda;
+      outline: 0; /* reset for :focus */
+      cursor: pointer;
+    }
+
+    &:active {
+      color: #4a7bab;
+    }
   `,
 
   emojiSelectPopoverScrollbar,
